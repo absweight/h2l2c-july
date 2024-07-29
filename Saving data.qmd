@@ -22,3 +22,27 @@ saveRDS(object = iris, file = "iris_dataframe.rds")
 #to pull back from disk: need to save as a variable
 iris_from_disk <- readRDS(file = "iris_dataframe.rds")
 ```
+
+```{r}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+
+deaths <- VADeaths |>
+  as_tibble(rownames = "age_range") |>
+  pivot_longer(cols = -age_range,
+               names_to = "group",
+               values_to = "mean_deaths")
+
+ggplot(deaths, aes(x=group, y = age_range)) +
+  geom_tile(aes(fill=mean_deaths))
+  
+
+
+
+
+```
+
+```{r}
+
+```
