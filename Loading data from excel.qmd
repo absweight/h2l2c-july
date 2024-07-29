@@ -1,0 +1,14 @@
+---
+title: "Loading data from Excel"
+author: "Abbie Weight"
+format: html
+editor: visual
+---
+
+## Reading from excel
+
+Load excel file into folder
+
+```{r}
+readxl::read_xlsx("Practice_excel_for_R.xlsx", sheet = )
+```
