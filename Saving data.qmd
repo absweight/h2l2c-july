@@ -1,0 +1,24 @@
+---
+title: "saving_data"
+author: "Abbie Weight"
+format: html
+editor: visual
+---
+
+## Saving data
+
+```{r}
+#save to disk
+iris
+#write table function: x is object to write, file = what you want to call it, sep = separate by (delimiter for your file, tab would be "\t")
+write.table(x = iris, file = "iris_copy.csv", sep = ",")
+
+#to write text lines to a connection, make notes/a text file:
+writeLines("this is my text output", con = "write-lines-example")
+
+#to save the object as is, compressed in memory on your disk: good for saving large files
+saveRDS(object = iris, file = "iris_dataframe.rds")
+
+#to pull back from disk: need to save as a variable
+iris_from_disk <- readRDS(file = "iris_dataframe.rds")
+```
